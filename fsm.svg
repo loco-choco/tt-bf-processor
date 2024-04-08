@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.87310792"
-     inkscape:cx="2861.0438"
-     inkscape:cy="279.46144"
+     inkscape:zoom="0.77974399"
+     inkscape:cx="3288.2588"
+     inkscape:cy="1559.4862"
      inkscape:window-width="1274"
      inkscape:window-height="1018"
      inkscape:window-x="0"
@@ -761,18 +761,120 @@
        width="370.6286"
        height="157.00583"
        id="rect1-6-6-7-8-1-8" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-7" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-9" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-8-7" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-8-6-3" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-8-6-1-6" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-0-1" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-8-3-2" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-46-8-3-0-9" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="1502.4007"
+       height="135.2995"
+       id="rect1-7-5" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="1502.4008"
+       height="135.2995"
+       id="rect1-7-5-9" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-7-54" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="1502.4008"
+       height="135.2995"
+       id="rect1-7-5-7" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="1502.4008"
+       height="135.2995"
+       id="rect1-7-5-9-4" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="1502.4008"
+       height="135.2995"
+       id="rect1-7-5-9-4-1" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="1502.4008"
+       height="135.2995"
+       id="rect1-7-5-7-4" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-7-54-9" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-6-6-5-8-2" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.11899;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"
        id="rect9"
-       width="724.01984"
-       height="378.08032"
-       x="471.10947"
-       y="-20.685843"
+       width="723.90082"
+       height="473.48663"
+       x="471.16898"
+       y="-20.626348"
        inkscape:export-filename="fsm.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
@@ -867,9 +969,9 @@
        transform="matrix(0.26458333,0,0,0.26458333,501.51159,-3.10575)"
        id="text1-5-7-3"
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
-         x="285.14407"
+         x="276.8454"
          y="327.47451"
-         id="tspan57">Loading</tspan></text>
+         id="tspan57">Loading*</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,476.52175,-38.471569)"
@@ -878,6 +980,28 @@
          x="271.55466"
          y="327.47451"
          id="tspan58">Registers</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"
+       id="rect7-1"
+       width="424.38214"
+       height="67.901459"
+       x="700.54706"
+       y="351.3537" />
+    <rect
+       style="fill:#cfcfcf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"
+       id="rect8-9"
+       width="424.38214"
+       height="16.876953"
+       x="700.54706"
+       y="334.47675" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,817.2334,259.15528)"
+       id="text1-5-7-3-6-0"
+       style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-0-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="241.13333"
+         y="327.47451"
+         id="tspan59">Explanations</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"
        id="rect7-9"
@@ -899,7 +1023,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="310.82935"
          y="327.47451"
-         id="tspan59">Write</tspan></text>
+         id="tspan60">Write</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,473.68534,89.081545)"
@@ -907,7 +1031,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="315.94943"
          y="327.47451"
-         id="tspan60">Data</tspan></text>
+         id="tspan61">Data</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,473.68534,107.98477)"
@@ -915,7 +1039,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="314.84005"
          y="327.47451"
-         id="tspan61">Addr</tspan></text>
+         id="tspan62">Addr</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,483.56314,125.86226)"
@@ -923,7 +1047,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-0-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="273.87998"
          y="327.47451"
-         id="tspan62">InstrAddr</tspan></text>
+         id="tspan63">InstrAddr</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,478.37588,198.86249)"
@@ -931,7 +1055,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="296.472"
          y="327.47451"
-         id="tspan63">Output</tspan></text>
+         id="tspan64">Output</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,473.262,159.58457)"
@@ -939,7 +1063,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="313.24004"
          y="327.47451"
-         id="tspan64">Input</tspan></text>
+         id="tspan65">Input</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,492.79744,178.4878)"
@@ -947,7 +1071,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-0-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="243.03198"
          y="327.47451"
-         id="tspan65">WaitingInput</tspan></text>
+         id="tspan66">WaitingInput</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,476.375,65.894973)"
@@ -955,7 +1079,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-0-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="319.27739"
          y="327.47451"
-         id="tspan66">Pins</tspan></text>
+         id="tspan67">Pins</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,598.49268,-54.175872)"
@@ -963,7 +1087,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="305.62402"
          y="327.47451"
-         id="tspan67">Reset</tspan></text>
+         id="tspan68">Reset</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,739.42273,-2.1140922)"
@@ -971,11 +1095,11 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="299.11469"
          y="312.67451"
-         id="tspan68">Addr = PC
+         id="tspan69">Addr = PC
 </tspan><tspan
          x="292.40802"
          y="346.00788"
-         id="tspan69">Instr = Data</tspan></text>
+         id="tspan70">Instr = Data</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,718.14554,39.683922)"
@@ -983,7 +1107,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="295.40805"
          y="312.67451"
-         id="tspan70">Data = + / -</tspan></text>
+         id="tspan71">Data = + / -</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,718.14554,47.810434)"
@@ -991,7 +1115,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan71">Looping = 0</tspan></text>
+         id="tspan72">Looping = 0</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow)"
        d="m 761.58154,86.891934 h 47.18369"
@@ -1014,15 +1138,15 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="293.42135"
          y="312.67451"
-         id="tspan72">Addr = Reg
+         id="tspan73">Addr = Reg
 </tspan><tspan
          x="284.19468"
          y="346.00788"
-         id="tspan73">Data = Temp
+         id="tspan74">Data = Temp
 </tspan><tspan
          x="329.26137"
          y="379.34126"
-         id="tspan74">Write</tspan></text>
+         id="tspan75">Write</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow-6)"
        d="M 813.16612,170.94427 H 765.98243"
@@ -1090,15 +1214,15 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="293.42135"
          y="312.67451"
-         id="tspan75">Addr = Reg
+         id="tspan76">Addr = Reg
 </tspan><tspan
          x="285.92132"
          y="346.00788"
-         id="tspan78"><tspan
+         id="tspan79"><tspan
            style="font-size:18.6667px"
-           id="tspan76">Temp</tspan><tspan
+           id="tspan77">Temp</tspan><tspan
            style="font-size:18.6667px"
-           id="tspan77"> = Data +/- 1</tspan></tspan></text>
+           id="tspan78"> = Data +/- 1</tspan></tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow-9-6)"
        d="m 1043.0239,191.89416 -0.144,42.0217"
@@ -1117,7 +1241,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-17);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="284.19468"
          y="312.67451"
-         id="tspan79">Temp = Data
+         id="tspan80">Temp = Data
 </tspan></text>
     <text
        xml:space="preserve"
@@ -1126,13 +1250,13 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="293.42135"
          y="312.67451"
-         id="tspan80">Addr = Reg
+         id="tspan81">Addr = Reg
 </tspan><tspan
          x="291.77345"
          y="346.00788"
-         id="tspan82"><tspan
+         id="tspan83"><tspan
            style="font-size:24px"
-           id="tspan81">Temp = Data</tspan></tspan></text>
+           id="tspan82">Temp = Data</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,781.78103,39.683916)"
@@ -1140,7 +1264,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="292.06139"
          y="312.67451"
-         id="tspan83">Data = &gt; / &lt;</tspan></text>
+         id="tspan84">Data = &gt; / &lt;</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,781.78103,47.810428)"
@@ -1148,7 +1272,15 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan84">Looping = 0</tspan></text>
+         id="tspan85">Looping = 0</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.21511732,-0.1540418,0.1540418,0.21511732,801.40718,202.4179)"
+       id="text1-8-2-7-4-2"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="291.46136"
+         y="312.67451"
+         id="tspan86">Looping = 1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,848.30762,-25.423779)"
@@ -1156,7 +1288,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="198.75459"
          y="312.67451"
-         id="tspan85">Looping = 1 and Data != [ / ]</tspan></text>
+         id="tspan87">Looping = 1 and Data != [ / ]</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,925.92394,47.810428)"
@@ -1164,7 +1296,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan86">Looping = 0</tspan></text>
+         id="tspan88">Looping = 0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,890.81045,88.317759)"
@@ -1172,7 +1304,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="308.90136"
          y="312.67451"
-         id="tspan87">Input = 0</tspan></text>
+         id="tspan89">Input = 0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,932.6311,131.85039)"
@@ -1180,7 +1312,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5-6-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="308.90136"
          y="312.67451"
-         id="tspan88">Input = 1</tspan></text>
+         id="tspan90">Input = 1</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-start:url(#RoundedArrow)"
        d="m 898.30331,144.89778 -0.008,-58.005843 -42.53365,0"
@@ -1229,7 +1361,7 @@
        style="font-size:29.3333px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="302.72285"
          y="315.14111"
-         id="tspan89">Reg++/--</tspan></text>
+         id="tspan91">Reg++/--</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,845.39367,39.683916)"
@@ -1237,7 +1369,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="300.23472"
          y="312.67451"
-         id="tspan90">Data = [ / ]</tspan></text>
+         id="tspan92">Data = [ / ]</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,848.27587,-44.073722)"
@@ -1245,7 +1377,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="233.60789"
          y="312.67451"
-         id="tspan91">Data = Not Instruction</tspan></text>
+         id="tspan93">Data = Not Instruction</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,848.27587,-34.748751)"
@@ -1253,7 +1385,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-1-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="348.43475"
          y="312.67451"
-         id="tspan92">or</tspan></text>
+         id="tspan94">or</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-start:url(#RoundedArrow-7)"
        d="m 961.91595,233.49169 -0.008,-146.599753 h -63.61264"
@@ -1277,7 +1409,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-1-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="286.88799"
          y="312.67451"
-         id="tspan93">WaitingInput</tspan></text>
+         id="tspan95">WaitingInput</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,925.75108,39.913222)"
@@ -1285,7 +1417,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="314.30141"
          y="312.67451"
-         id="tspan94">Data = , </tspan></text>
+         id="tspan96">Data = , </tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1009.9383,47.561395)"
@@ -1293,7 +1425,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan95">Looping = 0</tspan></text>
+         id="tspan97">Looping = 0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1009.7654,39.664189)"
@@ -1301,7 +1433,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-9-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="314.67474"
          y="312.67451"
-         id="tspan96">Data = . </tspan></text>
+         id="tspan98">Data = . </tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:0.723724;stroke-dasharray:none;stroke-dashoffset:16.7811"
        id="path1-2-0-2-2-9-6"
@@ -1326,15 +1458,15 @@
        style="font-size:24px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-17-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.77345"
          y="310.20781"
-         id="tspan97">Data = Temp
+         id="tspan99">Data = Temp
 </tspan><tspan
          x="332.33341"
          y="340.20781"
-         id="tspan98">Write
+         id="tspan100">Write
 </tspan><tspan
          x="324.25741"
          y="370.20781"
-         id="tspan99">Output</tspan></text>
+         id="tspan101">Output</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1030.3218,86.340329)"
@@ -1342,11 +1474,11 @@
        style="font-size:24px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-1-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="300.07744"
          y="310.20781"
-         id="tspan100">Addr = Reg
+         id="tspan102">Addr = Reg
 </tspan><tspan
          x="291.77345"
          y="340.20781"
-         id="tspan101">Temp = Data</tspan></text>
+         id="tspan103">Temp = Data</tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:0.723724;stroke-dasharray:none;stroke-dashoffset:16.7811"
        id="path1-2-0-2-2-9-6-0"
@@ -1366,11 +1498,11 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-3-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.88802"
          y="312.67451"
-         id="tspan102">Depth++/--*
+         id="tspan104">Depth++/--*
 </tspan><tspan
          x="308.14137"
          y="346.00788"
-         id="tspan103">Looping*</tspan></text>
+         id="tspan105">Looping*</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow-6-7)"
        d="M 941.58238,259.53818 H 894.39869"
@@ -1380,5 +1512,86 @@
        style="fill:none;stroke:#000000;stroke-dashoffset:16.7811;marker-end:url(#RoundedArrow-9)"
        d="m 1029.0385,186.95377 c -7.4361,3.55014 -16.3221,1.77949 -21.8294,-4.34979 -5.5073,-6.12928 -6.3208,-15.15334 -1.9982,-22.16867 4.3225,-7.01533 12.7486,-10.34644 20.6997,-8.18326"
        sodipodi:nodetypes="cssc" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,630.31277,282.22796)"
+       id="text1-9"
+       style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="297.64542"
+         y="327.47451"
+         id="tspan106">PC++* </tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,682.82587,279.62375)"
+       id="text1-9-7"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="258.49361"
+         y="312.67451"
+         id="tspan107">PC will only only act normaly if it isn't looping, in which case the sign of Depth will indicate the direction PC should go</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,682.82587,288.24847)"
+       id="text1-9-7-7"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-5-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="750.28124"
+         y="312.67451"
+         id="tspan108">if Depth &gt;= 0: PC++; else PC--</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,630.31277,302.88931)"
+       id="text1-9-3"
+       style="font-size:32px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-54);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="278.26944"
+         y="317.60781"
+         id="tspan109">Depth++/--*</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,682.82587,300.2851)"
+       id="text1-9-7-8"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-5-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="264.04027"
+         y="312.67451"
+         id="tspan111"><tspan
+           dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00010251999"
+           id="tspan110">The direction depth adds or substracts is decided if it is entering ignoring a loop ( [ first ) or returning to one ( ] first )  </tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,682.82587,308.90982)"
+       id="text1-9-7-7-8"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-5-9-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="735.90788"
+         y="312.67451"
+         id="tspan112">if Data = [: Depth++; else Depth--</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,630.31277,323.55066)"
+       id="text1-9-3-0"
+       style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-54-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="277.03737"
+         y="327.47451"
+         id="tspan113">Looping* </tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,682.82587,320.94645)"
+       id="text1-9-7-8-9"
+       style="font-size:21.3333px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-5-7-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="271.37278"
+         y="307.74111"
+         id="tspan115"><tspan
+           dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0001039505"
+           id="tspan114">Looping verifies that we are still looking for the right PC for the loop, because its value is just if Depth isn' t zero, it doesn' t need to be a register</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,682.82587,329.57117)"
+       id="text1-9-7-7-8-6"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-7-5-9-4-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="803.708"
+         y="312.67451"
+         id="tspan116">Looping = Depth != 0</tspan></text>
+    <path
+       style="fill:#cfcfcf;stroke:#000000;stroke-width:1;stroke-dashoffset:16.7811;marker-end:url(#RoundedArrow)"
+       d="m 961.90593,193.7521 -72.95947,50.00992"
+       id="path3"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
