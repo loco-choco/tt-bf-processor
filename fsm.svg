@@ -26,15 +26,22 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.21827698"
-     inkscape:cx="3539.0814"
-     inkscape:cy="247.3921"
-     inkscape:window-width="1280"
-     inkscape:window-height="476"
+     inkscape:zoom="0.87310792"
+     inkscape:cx="2861.0438"
+     inkscape:cy="279.46144"
+     inkscape:window-width="1274"
+     inkscape:window-height="1018"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showguides="false">
+    <sodipodi:guide
+       position="751.68139,212.12125"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <defs
      id="defs1">
     <marker
@@ -717,6 +724,43 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:none"
          id="path8-1-2-9-6-80" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-75"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-3" />
+    </marker>
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-6-6-7-8-1" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-6-6-5-8-6" />
+    <rect
+       x="174.66699"
+       y="288.00739"
+       width="370.6286"
+       height="157.00583"
+       id="rect1-6-6-7-8-1-8" />
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -727,8 +771,8 @@
        id="rect9"
        width="724.01984"
        height="378.08032"
-       x="471.21661"
-       y="-20.043005"
+       x="471.10947"
+       y="-20.685843"
        inkscape:export-filename="fsm.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
@@ -777,7 +821,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="297.64542"
          y="327.47451"
-         id="tspan1">PC++*</tspan></text>
+         id="tspan51">PC++*</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,454.22628,-17.521025)"
@@ -785,7 +829,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="330.86143"
          y="327.47451"
-         id="tspan2">PC</tspan></text>
+         id="tspan52">PC</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,454.33917,-3.10575)"
@@ -793,7 +837,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="321.75209"
          y="327.47451"
-         id="tspan3">Reg</tspan></text>
+         id="tspan53">Reg</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,454.33917,12.08342)"
@@ -801,7 +845,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="305.88005"
          y="327.47451"
-         id="tspan4">Temp</tspan></text>
+         id="tspan54">Temp</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,454.22628,27.27259)"
@@ -809,7 +853,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-6-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="304.38672"
          y="327.47451"
-         id="tspan5">Depth</tspan></text>
+         id="tspan55">Depth</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,501.3987,-17.521025)"
@@ -817,7 +861,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="319.02137"
          y="327.47451"
-         id="tspan6">Instr</tspan></text>
+         id="tspan56">Instr</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,501.51159,-3.10575)"
@@ -825,7 +869,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="285.14407"
          y="327.47451"
-         id="tspan7">Loading</tspan></text>
+         id="tspan57">Loading</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,476.52175,-38.471569)"
@@ -833,7 +877,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="271.55466"
          y="327.47451"
-         id="tspan8">Registers</tspan></text>
+         id="tspan58">Registers</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"
        id="rect7-9"
@@ -855,7 +899,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="310.82935"
          y="327.47451"
-         id="tspan9">Write</tspan></text>
+         id="tspan59">Write</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,473.68534,89.081545)"
@@ -863,7 +907,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="315.94943"
          y="327.47451"
-         id="tspan10">Data</tspan></text>
+         id="tspan60">Data</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,473.68534,107.98477)"
@@ -871,7 +915,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="314.84005"
          y="327.47451"
-         id="tspan11">Addr</tspan></text>
+         id="tspan61">Addr</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,483.56314,125.86226)"
@@ -879,7 +923,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-0-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="273.87998"
          y="327.47451"
-         id="tspan12">InstrAddr</tspan></text>
+         id="tspan62">InstrAddr</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,478.37588,198.86249)"
@@ -887,7 +931,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="296.472"
          y="327.47451"
-         id="tspan13">Output</tspan></text>
+         id="tspan63">Output</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,473.262,159.58457)"
@@ -895,7 +939,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="313.24004"
          y="327.47451"
-         id="tspan14">Input</tspan></text>
+         id="tspan64">Input</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,492.79744,178.4878)"
@@ -903,7 +947,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-8-5-0-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="243.03198"
          y="327.47451"
-         id="tspan15">WaitingInput</tspan></text>
+         id="tspan65">WaitingInput</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,476.375,65.894973)"
@@ -911,7 +955,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-46-8-3-0-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="319.27739"
          y="327.47451"
-         id="tspan16">Pins</tspan></text>
+         id="tspan66">Pins</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,598.49268,-54.175872)"
@@ -919,7 +963,7 @@
        style="font-size:42.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="305.62402"
          y="327.47451"
-         id="tspan17">Reset</tspan></text>
+         id="tspan67">Reset</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,739.42273,-2.1140922)"
@@ -927,11 +971,11 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="299.11469"
          y="312.67451"
-         id="tspan18">Addr = PC
+         id="tspan68">Addr = PC
 </tspan><tspan
          x="292.40802"
          y="346.00788"
-         id="tspan19">Instr = Data</tspan></text>
+         id="tspan69">Instr = Data</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,718.14554,39.683922)"
@@ -939,7 +983,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="295.40805"
          y="312.67451"
-         id="tspan20">Data = + / -</tspan></text>
+         id="tspan70">Data = + / -</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,718.14554,47.810434)"
@@ -947,7 +991,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan21">Looping = 0</tspan></text>
+         id="tspan71">Looping = 0</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow)"
        d="m 761.58154,86.891934 h 47.18369"
@@ -970,15 +1014,15 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="293.42135"
          y="312.67451"
-         id="tspan22">Addr = Reg
+         id="tspan72">Addr = Reg
 </tspan><tspan
          x="284.19468"
          y="346.00788"
-         id="tspan23">Data = Temp
+         id="tspan73">Data = Temp
 </tspan><tspan
          x="329.26137"
          y="379.34126"
-         id="tspan24">Write</tspan></text>
+         id="tspan74">Write</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow-6)"
        d="M 813.16612,170.94427 H 765.98243"
@@ -1046,15 +1090,15 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="293.42135"
          y="312.67451"
-         id="tspan25">Addr = Reg
+         id="tspan75">Addr = Reg
 </tspan><tspan
          x="285.92132"
          y="346.00788"
-         id="tspan28"><tspan
+         id="tspan78"><tspan
            style="font-size:18.6667px"
-           id="tspan26">Temp</tspan><tspan
+           id="tspan76">Temp</tspan><tspan
            style="font-size:18.6667px"
-           id="tspan27"> = Data +/- 1</tspan></tspan></text>
+           id="tspan77"> = Data +/- 1</tspan></tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow-9-6)"
        d="m 1043.0239,191.89416 -0.144,42.0217"
@@ -1073,7 +1117,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-17);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="284.19468"
          y="312.67451"
-         id="tspan29">Temp = Data
+         id="tspan79">Temp = Data
 </tspan></text>
     <text
        xml:space="preserve"
@@ -1082,13 +1126,13 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="293.42135"
          y="312.67451"
-         id="tspan30">Addr = Reg
+         id="tspan80">Addr = Reg
 </tspan><tspan
          x="291.77345"
          y="346.00788"
-         id="tspan32"><tspan
+         id="tspan82"><tspan
            style="font-size:24px"
-           id="tspan31">Temp = Data</tspan></tspan></text>
+           id="tspan81">Temp = Data</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,781.78103,39.683916)"
@@ -1096,7 +1140,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="292.06139"
          y="312.67451"
-         id="tspan33">Data = &gt; / &lt;</tspan></text>
+         id="tspan83">Data = &gt; / &lt;</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,781.78103,47.810428)"
@@ -1104,7 +1148,15 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan34">Looping = 0</tspan></text>
+         id="tspan84">Looping = 0</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,848.30762,-25.423779)"
+       id="text1-8-2-7-4-6"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="198.75459"
+         y="312.67451"
+         id="tspan85">Looping = 1 and Data != [ / ]</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,925.92394,47.810428)"
@@ -1112,7 +1164,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan35">Looping = 0</tspan></text>
+         id="tspan86">Looping = 0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,890.81045,88.317759)"
@@ -1120,7 +1172,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="308.90136"
          y="312.67451"
-         id="tspan36">Input = 0</tspan></text>
+         id="tspan87">Input = 0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,932.6311,131.85039)"
@@ -1128,12 +1180,17 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5-6-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="308.90136"
          y="312.67451"
-         id="tspan37">Input = 1</tspan></text>
+         id="tspan88">Input = 1</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-start:url(#RoundedArrow)"
        d="m 898.30331,144.89778 -0.008,-58.005843 -42.53365,0"
        id="path2-8-9"
        sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-start:url(#RoundedArrow-75)"
+       d="M 740.23036,60.83167 V 17.360968 l 158.06495,0.121548 v 69.409421"
+       id="path2-8-9-6"
+       sodipodi:nodetypes="cccc" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-start:url(#RoundedArrow-3)"
        d="m 1043.5653,144.89778 -0.01,-58.005843 h -81.64935"
@@ -1172,7 +1229,7 @@
        style="font-size:29.3333px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="302.72285"
          y="315.14111"
-         id="tspan38">Reg++/--</tspan></text>
+         id="tspan89">Reg++/--</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,845.39367,39.683916)"
@@ -1180,7 +1237,23 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="300.23472"
          y="312.67451"
-         id="tspan39">Data = [ / ]</tspan></text>
+         id="tspan90">Data = [ / ]</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,848.27587,-44.073722)"
+       id="text1-8-2-3-2-7"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="233.60789"
+         y="312.67451"
+         id="tspan91">Data = Not Instruction</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,848.27587,-34.748751)"
+       id="text1-8-2-3-2-7-9"
+       style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-1-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
+         x="348.43475"
+         y="312.67451"
+         id="tspan92">or</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-start:url(#RoundedArrow-7)"
        d="m 961.91595,233.49169 -0.008,-146.599753 h -63.61264"
@@ -1204,7 +1277,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-1-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="286.88799"
          y="312.67451"
-         id="tspan40">WaitingInput</tspan></text>
+         id="tspan93">WaitingInput</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,925.75108,39.913222)"
@@ -1212,7 +1285,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="314.30141"
          y="312.67451"
-         id="tspan41">Data = , </tspan></text>
+         id="tspan94">Data = , </tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1009.9383,47.561395)"
@@ -1220,7 +1293,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-5-8-5-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.46136"
          y="312.67451"
-         id="tspan42">Looping = 0</tspan></text>
+         id="tspan95">Looping = 0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1009.7654,39.664189)"
@@ -1228,7 +1301,7 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-6-7-8-9-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="314.67474"
          y="312.67451"
-         id="tspan43">Data = . </tspan></text>
+         id="tspan96">Data = . </tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:0.723724;stroke-dasharray:none;stroke-dashoffset:16.7811"
        id="path1-2-0-2-2-9-6"
@@ -1253,15 +1326,15 @@
        style="font-size:24px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-17-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.77345"
          y="310.20781"
-         id="tspan44">Data = Temp
+         id="tspan97">Data = Temp
 </tspan><tspan
          x="332.33341"
          y="340.20781"
-         id="tspan45">Write
+         id="tspan98">Write
 </tspan><tspan
          x="324.25741"
          y="370.20781"
-         id="tspan46">Output</tspan></text>
+         id="tspan99">Output</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1030.3218,86.340329)"
@@ -1269,11 +1342,11 @@
        style="font-size:24px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-2-1-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="300.07744"
          y="310.20781"
-         id="tspan47">Addr = Reg
+         id="tspan100">Addr = Reg
 </tspan><tspan
          x="291.77345"
          y="340.20781"
-         id="tspan48">Temp = Data</tspan></text>
+         id="tspan101">Temp = Data</tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:0.723724;stroke-dasharray:none;stroke-dashoffset:16.7811"
        id="path1-2-0-2-2-9-6-0"
@@ -1293,11 +1366,11 @@
        style="font-size:26.6667px;font-family:FreeSans;-inkscape-font-specification:FreeSans;text-align:center;white-space:pre;shape-inside:url(#rect1-6-3-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1"><tspan
          x="291.88802"
          y="312.67451"
-         id="tspan49">Depth++/--*
+         id="tspan102">Depth++/--*
 </tspan><tspan
          x="308.14137"
          y="346.00788"
-         id="tspan50">Looping*</tspan></text>
+         id="tspan103">Looping*</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:16.7811;stroke-opacity:1;marker-end:url(#RoundedArrow-6-7)"
        d="M 941.58238,259.53818 H 894.39869"
