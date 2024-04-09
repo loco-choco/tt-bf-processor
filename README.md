@@ -9,3 +9,7 @@ This is a second version of my implementation of a [Brainf\*ck Processor](https:
 ## State Machine
 
 ![FSM](fsm.png)
+
+## Circuit Diagram
+
+![Diagram](diagram.png)
