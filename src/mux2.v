@@ -10,9 +10,11 @@ module mux2  (
     output wire [7:0] out
 );
 
-if(sel)
-  out <= in_1;
-else
-  out <= in_0;
+always @ ( * ) begin
+  if(sel)
+    out = in_1;
+  else
+    out = in_0;
+end
 
 endmodule

@@ -8,6 +8,6 @@ module is_zero  (
     output wire is_zero
 );
 
-assign is_zero <= in == 0;
+assign is_zero = in == 0;
 
 endmodule

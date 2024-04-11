@@ -12,12 +12,13 @@ module mux4  (
     output wire [7:0] out
 );
 
-always @ (in_0 or in_1 or in_2 or in_3 or sel) begin
+always @ ( * ) begin
   case (sel)
-    2'b00 : out <= in_0;
-    2'b01 : out <= in_0;
-    2'b10 : out <= in_0;
-    2'b11 : out <= in_0;
+    2'b00 : out = in_0;
+    2'b01 : out = in_1;
+    2'b10 : out = in_2;
+    2'b11 : out = in_3;
+  endcase
 end
 
 endmodule
