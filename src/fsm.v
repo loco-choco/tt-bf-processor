@@ -10,6 +10,7 @@ module fsm (
     input wire [7:0] instr,
 
     input wire looping,
+    input wire depth_signal,
     input wire data_is_zero,
 
     output wire pc_en,
@@ -19,22 +20,21 @@ module fsm (
     output wire instr_en,
 
     output wire write,
-    output wire pc_sel,
     output wire operation,
     output wire [1:0] alu_sel,
     output wire data_sel,
     output wire addr_sel
 );
 
-// Selection consts f|| alu_sel
+// Selection consts for alu_sel
 localparam ALU_SEL_PC = 2'd0,
 	   ALU_SEL_Reg = 2'd1,
 	   ALU_SEL_Depth = 2'd2,
 	   ALU_SEL_Temp = 2'd3;
-// Selection consts f|| data_sel
+// Selection consts for data_sel
 localparam TEMP_DATA_SEL_Data = 1'd0,
 	   TEMP_DATA_SEL_Alu = 1'd1;
-// Selection consts f|| addr_sel
+// Selection consts for addr_sel
 localparam ADDR_SEL_PC = 1'd0,
 	   ADDR_SEL_Reg = 1'd1;
 
@@ -113,7 +113,6 @@ always @ ( * ) begin
 
     write = 0;
 
-    pc_sel = 0;
     operation = 0;
     alu_sel = ALU_SEL_PC;
     data_sel = TEMP_DATA_SEL_Data;
@@ -122,8 +121,8 @@ always @ ( * ) begin
   case (current_state)
     STATE_Next_PC : begin
       alu_sel = ALU_SEL_PC; // pc++/--, depends on the signal of depth
-      pc_sel = 1;
-      pc_en = 1;
+      operation = depth_signal;
+      pc_en = 1; // pc = pc++/--
     end
     STATE_Fetch_Instr : begin
       addr_sel = ADDR_SEL_PC; // addr = pc
@@ -137,7 +136,6 @@ always @ ( * ) begin
     end
     STATE_Sum_Sub_Operate_Data : begin
       alu_sel = ALU_SEL_Temp; // temp++/--
-      pc_sel = 0;
       operation = decoded_instr[0]; // if +, ++, -, --
       data_sel = TEMP_DATA_SEL_Alu; // temp = temp++/--
       temp_en = 1;
@@ -149,7 +147,6 @@ always @ ( * ) begin
     // >/<
     STATE_Shift_Reg : begin
       alu_sel = ALU_SEL_Reg; // reg++/--
-      pc_sel = 0;
       operation = dedec_instr[0]; // if >, ++, <, --
       reg_en = 1; // reg = reg++/--
     end
@@ -162,7 +159,6 @@ always @ ( * ) begin
     STATE_Loop_Operate_Depth : begin
       if(looping || looping_condition) begin
         alu_sel = ALU_SEL_Depth; // depth++/--
-        pc_sel = 0;
         operation = dedec_instr[0]; // if [, ++, ], --
         depth_en = 1; // reg = reg++/--
       end
