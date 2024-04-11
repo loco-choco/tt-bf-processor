@@ -16,6 +16,13 @@ project:
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
     - "project.v"
+    - "dff.v"
+    - "mux2.v"
+    - "mux4.v"
+    - "is_zero.v"
+    - "signal.v"
+    - "alu.v"
+    - "fsm.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:

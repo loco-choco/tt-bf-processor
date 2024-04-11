@@ -10,6 +10,14 @@ This is a second version of my implementation of a [Brainf\*ck Processor](https:
 
 ![FSM](fsm.png)
 
+## State Machine - For Tiny Tapeout
+
+![FSM-TT](fsm-tt.png)
+
 ## Circuit Diagram
 
 ![Diagram](diagram.png)
+
+## Circuit Diagram
+
+![Diagram-TT](diagram-tt.png)
