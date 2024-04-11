@@ -9,7 +9,7 @@ module mux4  (
     input wire [7:0] in_1,
     input wire [7:0] in_2,
     input wire [7:0] in_3,
-    output wire [7:0] out
+    output reg [7:0] out
 );
 
 always @ ( * ) begin

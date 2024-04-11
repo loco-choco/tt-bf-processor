@@ -8,6 +8,6 @@ module signal (
     output wire signal
 );
 
-assign signal = in >= 0;
+assign signal = in[7];
 
 endmodule

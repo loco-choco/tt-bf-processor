@@ -4,10 +4,10 @@
  */
 
 module alu  (
-    input wire[1:0] operation,
+    input wire operation,
     input wire [7:0] a,
     input wire [7:0] b,
-    output wire [7:0] result
+    output reg [7:0] result
 );
 
 always @ ( * ) begin

@@ -13,17 +13,17 @@ module fsm (
     input wire depth_signal,
     input wire data_is_zero,
 
-    output wire pc_en,
-    output wire reg_en,
-    output wire depth_en,
-    output wire temp_en,
-    output wire instr_en,
+    output reg pc_en,
+    output reg reg_en,
+    output reg depth_en,
+    output reg temp_en,
+    output reg instr_en,
 
-    output wire write,
-    output wire operation,
-    output wire [1:0] alu_sel,
-    output wire data_sel,
-    output wire addr_sel
+    output reg write,
+    output reg operation,
+    output reg [1:0] alu_sel,
+    output reg data_sel,
+    output reg addr_sel
 );
 
 // Selection consts for alu_sel
@@ -39,8 +39,8 @@ localparam ADDR_SEL_PC = 1'd0,
 	   ADDR_SEL_Reg = 1'd1;
 
 // Decode Instr Input
-wire [2:0] decoded_instr;
-wire not_instr;
+reg [2:0] decoded_instr;
+reg not_instr;
 always @ (instr) begin
   case (instr)
     "+" : begin
@@ -147,7 +147,7 @@ always @ ( * ) begin
     // >/<
     STATE_Shift_Reg : begin
       alu_sel = ALU_SEL_Reg; // reg++/--
-      operation = dedec_instr[0]; // if >, ++, <, --
+      operation = decoded_instr[0]; // if >, ++, <, --
       reg_en = 1; // reg = reg++/--
     end
     // [/]
@@ -159,7 +159,7 @@ always @ ( * ) begin
     STATE_Loop_Operate_Depth : begin
       if(looping || looping_condition) begin
         alu_sel = ALU_SEL_Depth; // depth++/--
-        operation = dedec_instr[0]; // if [, ++, ], --
+        operation = decoded_instr[0]; // if [, ++, ], --
         depth_en = 1; // reg = reg++/--
       end
     end
@@ -168,8 +168,8 @@ end
 
 // State Transitions on Clock
 always @ (posedge clk) begin
-	if (~nreset) current_state = STATE_Fetch_Instr;
-	else if (en) current_state = next_state; //Only progress state if design is enabled
+	if (~nreset) current_state <= STATE_Fetch_Instr;
+	else if (en) current_state <= next_state; //Only progress state if design is enabled
 end
 
 // State Transitions on Condition

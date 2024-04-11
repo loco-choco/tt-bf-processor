@@ -5,16 +5,17 @@
 
 module dff (
     input wire clk,
+    input wire en,
     input wire [7:0] d,
     input wire nreset, //Reset on low
     output reg [7:0] q
 );
 
-always @ (posedge clk or negedge nreset) begin
+always @ (posedge clk) begin
     if(~nreset)
-	q = 0;
-    else
-	q = d;
+	q <= 0;
+    else if (en)
+	q <= d;
 end
 
 endmodule
