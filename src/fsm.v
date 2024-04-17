@@ -166,6 +166,8 @@ always @ ( * ) begin
         depth_en = 1; // reg = reg++/--
       end
     end
+    default : begin
+    end
   endcase
 end
 
@@ -220,6 +222,9 @@ always @ ( * ) begin
       next_state = STATE_Loop_Operate_Depth;
     end
     STATE_Loop_Operate_Depth : begin
+      next_state = STATE_Next_PC;
+    end
+    default : begin
       next_state = STATE_Next_PC;
     end
   endcase
