@@ -108,9 +108,32 @@ async def test_project(dut):
             if reg_intr < 0:
                reg_intr = 255
 
-        print(f"{reg_intr}")
+        print(f"Reg = {reg_intr}")
     elif instr_intr == ord('[') or instr_intr == ord(']'):
-        print("[]")
+        temp = None
+        if depth_intr == 0: # fetch data cycle
+            await FallingEdge(dut.clk) # go to depth++/--
+            # simulation --
+            assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+            reg_sim = int(dut.uo_out.value)
+            dut.uio_in.value = stack_sim[reg_sim]
+            # interpreter --
+            temp = stack_intr[reg_intr]
+            print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
+            assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
+        # depth ++/-- cycle
+        await FallingEdge(dut.clk) # go to pc++ cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+        # interpreter --
+        if instr_intr == ord('[') and (depth_intr != 0 or temp == 0): # >
+            depth_intr = (depth_intr + 1) % 255
+        elif instr_intr == ord(']') and (depth_intr != 0 or temp != 0):
+            depth_intr = depth_intr - 1
+            if depth_intr < 0:
+               depth_intr = 255
+
+        print(f"Depth = {depth_intr}")
     else:
         await FallingEdge(dut.clk) # go to pc++ cycle
     
