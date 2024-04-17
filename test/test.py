@@ -3,7 +3,7 @@
 
 import cocotb
 from cocotb.clock import Clock
-from cocotb.triggers import ClockCycles, RisingEdge
+from cocotb.triggers import ClockCycles, FallingEdge
 
 #def simulate_instr(instr: str, dut):
 #    print(f"instr = '{instr}'")
@@ -30,6 +30,7 @@ async def test_project(dut):
   await ClockCycles(dut.clk, 10)
   dut.rst_n.value = 1
   dut.ena.value = 1
+  #await FallingEdge(dut.clk) # start execution
   # brainf*ck circuit simulation
   pc_sim = 0
   reg_sim = 0
@@ -57,9 +58,9 @@ async def test_project(dut):
     instr_intr = stack_intr[pc_intr]
     print(f"\t {pc_sim}({pc_intr}): {instr_intr}")
     assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
-    await RisingEdge(dut.clk) # go to exec cycle
+    await FallingEdge(dut.clk) # go to exec cycle
     # exec cycle
-    await RisingEdge(dut.clk) # go to instr cycle
+    await FallingEdge(dut.clk) # go to instr cycle
     if depth_intr != 0:
         print("looping...")
     if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
@@ -71,7 +72,7 @@ async def test_project(dut):
         # interpreter --
         print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
         assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
-        await RisingEdge(dut.clk) # go to temp++/-- cycle
+        await FallingEdge(dut.clk) # go to temp++/-- cycle
         # temp++/-- cycle
         # simulation --
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" # 00, write disabled
@@ -82,7 +83,7 @@ async def test_project(dut):
             stack_intr[reg_intr] = stack_intr[reg_intr] - 1 
             if stack_intr[reg_intr] < 0:
                 stack_intr[reg_intr] = 255
-        await RisingEdge(dut.clk) # go to write back cycle
+        await FallingEdge(dut.clk) # go to write back cycle
         # write back cycle
         # simulation --
         assert int(dut.uio_oe.value) == 255, "write should be enabled!" #ff, write enabled
@@ -91,7 +92,7 @@ async def test_project(dut):
         # interpreter --
         print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
         assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
-        #await RisingEdge(dut.clk) # go to pc++ cycle
+        #await FallingEdge(dut.clk) # go to pc++ cycle
 
     elif (instr_intr == ord('>') or instr_intr == ord('<')):
         # reg++/-- cycle
@@ -104,14 +105,14 @@ async def test_project(dut):
             reg_intr = reg_intr - 1
             if reg_intr < 0:
                reg_intr = 255
-        #await RisingEdge(dut.clk) # go to pc++ cycle
+        #await FallingEdge(dut.clk) # go to pc++ cycle
 
         print(f"{reg_intr}")
     elif instr_intr == ord('[') or instr_intr == ord(']'):
         print("[]")
     
 
-    await RisingEdge(dut.clk) # go to pc++ cycle
+    await FallingEdge(dut.clk) # go to pc++ cycle
 
     # pc++ cycle
     # simulation -- 
@@ -125,6 +126,6 @@ async def test_project(dut):
         if pc_intr < 0:
             pc_intr = 255
 
-    await RisingEdge(dut.clk) # go to fetch cycle
+    await FallingEdge(dut.clk) # go to fetch cycle
 
   
