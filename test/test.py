@@ -51,6 +51,7 @@ async def test_project(dut):
   while pc_sim < len(code) or pc_intr < len(code):
     # fetch instr cycle
     # simulation --
+    await FallingEdge(dut.clk) # go to exec cycle
     assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
     pc_sim = int(dut.uo_out.value)
     dut.uio_in.value = stack_sim[pc_sim]
@@ -58,13 +59,13 @@ async def test_project(dut):
     instr_intr = stack_intr[pc_intr]
     print(f"\t {pc_sim}({pc_intr}): {instr_intr}")
     assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
-    await FallingEdge(dut.clk) # go to exec cycle
     # exec cycle
     await FallingEdge(dut.clk) # go to instr cycle
     if depth_intr != 0:
         print("looping...")
     if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
         # fetch data cycle
+        await FallingEdge(dut.clk) # go to temp++/-- cycle
         # simulation --
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
         reg_sim = int(dut.uo_out.value)
@@ -72,8 +73,8 @@ async def test_project(dut):
         # interpreter --
         print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
         assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
-        await FallingEdge(dut.clk) # go to temp++/-- cycle
         # temp++/-- cycle
+        await FallingEdge(dut.clk) # go to write back cycle
         # simulation --
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" # 00, write disabled
         # interpreter --
@@ -83,8 +84,8 @@ async def test_project(dut):
             stack_intr[reg_intr] = stack_intr[reg_intr] - 1 
             if stack_intr[reg_intr] < 0:
                 stack_intr[reg_intr] = 255
-        await FallingEdge(dut.clk) # go to write back cycle
         # write back cycle
+        await FallingEdge(dut.clk) # go to pc++ cycle
         # simulation --
         assert int(dut.uio_oe.value) == 255, "write should be enabled!" #ff, write enabled
         reg_sim = int(dut.uo_out.value)
@@ -96,6 +97,7 @@ async def test_project(dut):
 
     elif (instr_intr == ord('>') or instr_intr == ord('<')):
         # reg++/-- cycle
+        await FallingEdge(dut.clk) # go to pc++ cycle
         # simulation --
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
         # interpreter --
@@ -105,16 +107,17 @@ async def test_project(dut):
             reg_intr = reg_intr - 1
             if reg_intr < 0:
                reg_intr = 255
-        #await FallingEdge(dut.clk) # go to pc++ cycle
 
         print(f"{reg_intr}")
     elif instr_intr == ord('[') or instr_intr == ord(']'):
         print("[]")
+    else:
+        await FallingEdge(dut.clk) # go to pc++ cycle
     
 
-    await FallingEdge(dut.clk) # go to pc++ cycle
 
     # pc++ cycle
+    await FallingEdge(dut.clk) # go to fetch cycle
     # simulation -- 
     assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
     # interpreter --
@@ -126,6 +129,5 @@ async def test_project(dut):
         if pc_intr < 0:
             pc_intr = 255
 
-    await FallingEdge(dut.clk) # go to fetch cycle
 
   
