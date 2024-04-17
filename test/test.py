@@ -134,8 +134,8 @@ async def test_project(dut):
                depth_intr = 255
 
         print(f"\t\tDepth = {depth_intr}")
-    else:
-        await FallingEdge(dut.clk) # go to pc++ cycle
+    #else:
+        #await FallingEdge(dut.clk) # go to pc++ cycle
     
 
 

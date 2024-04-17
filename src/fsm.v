@@ -163,7 +163,7 @@ always @ ( * ) begin
       if(looping || looping_condition) begin
         alu_sel = ALU_SEL_Depth; // depth++/--
         operation = decoded_instr[0]; // if [, ++, ], --
-        depth_en = 1; // reg = reg++/--
+        depth_en = 1; // depth = depth++/--
       end
     end
     default : begin
