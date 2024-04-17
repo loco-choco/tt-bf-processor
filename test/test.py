@@ -57,12 +57,12 @@ async def test_project(dut):
     dut.uio_in.value = stack_sim[pc_sim]
     # interpreter --
     instr_intr = stack_intr[pc_intr]
-    print(f"\t {pc_sim}({pc_intr}): {instr_intr}")
+    print(f"\t {pc_sim}({pc_intr}): {chr(instr_intr)}")
     assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
     # exec cycle
     await FallingEdge(dut.clk) # go to instr cycle
     if depth_intr != 0:
-        print("looping...")
+        print("\t\t looping...")
     if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
         # fetch data cycle
         await FallingEdge(dut.clk) # go to temp++/-- cycle
@@ -71,7 +71,7 @@ async def test_project(dut):
         reg_sim = int(dut.uo_out.value)
         dut.uio_in.value = stack_sim[reg_sim]
         # interpreter --
-        print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
+        print(f"\t\t{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
         assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
         # temp++/-- cycle
         await FallingEdge(dut.clk) # go to write back cycle
@@ -91,7 +91,7 @@ async def test_project(dut):
         reg_sim = int(dut.uo_out.value)
         stack_sim[reg_sim] = int(dut.uio_out.value)
         # interpreter --
-        print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
+        print(f"\t\t{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]}) <- OUT")
         assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
         #await FallingEdge(dut.clk) # go to pc++ cycle
 
@@ -108,7 +108,7 @@ async def test_project(dut):
             if reg_intr < 0:
                reg_intr = 255
 
-        print(f"Reg = {reg_intr}")
+        print(f"\t\tReg = {reg_intr}")
     elif instr_intr == ord('[') or instr_intr == ord(']'):
         temp = None
         if depth_intr == 0: # fetch data cycle
@@ -119,7 +119,7 @@ async def test_project(dut):
             dut.uio_in.value = stack_sim[reg_sim]
             # interpreter --
             temp = stack_intr[reg_intr]
-            print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
+            print(f"\t\t{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
             assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
         # depth ++/-- cycle
         await FallingEdge(dut.clk) # go to pc++ cycle
@@ -133,7 +133,7 @@ async def test_project(dut):
             if depth_intr < 0:
                depth_intr = 255
 
-        print(f"Depth = {depth_intr}")
+        print(f"\t\tDepth = {depth_intr}")
     else:
         await FallingEdge(dut.clk) # go to pc++ cycle
     
