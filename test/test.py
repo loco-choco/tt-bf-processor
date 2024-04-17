@@ -3,7 +3,16 @@
 
 import cocotb
 from cocotb.clock import Clock
-from cocotb.triggers import ClockCycles
+from cocotb.triggers import ClockCycles, FallingEdge
+
+#def simulate_instr(instr: str, dut):
+#    print(f"instr = '{instr}'")
+#    intr_ascii = ord(instr)
+#    if instr is '+':
+
+def load_code(stack, code: str):
+    for i in range(len(code)):
+        stack[i] = ord(code[i])
 
 @cocotb.test()
 async def test_project(dut):
@@ -21,15 +30,99 @@ async def test_project(dut):
   await ClockCycles(dut.clk, 10)
   dut.rst_n.value = 1
   dut.ena.value = 1
-  
-  # Cheks if the '+' operation cycle is working
-  dut._log.info("Non Instr Test")
-  loops = 20
-  for i in range(loops):
+  # brainf*ck circuit simulation
+  pc_sim = 0
+  reg_sim = 0
+  stack_sim = [0 for i in range(256)]
+  # brainf*ck interpreter
+  pc_intr = 0
+  reg_intr = 0
+  instr_intr = ' '
+  depth_intr = 0
+  stack_intr = [0 for i in range(256)]
+
+  # load code for both the interpreter and simulation
+  code = ".++[-]"
+  load_code(stack_sim, code)
+  load_code(stack_intr, code)
+
+  dut._log.info("Running Code")
+  while pc_sim < len(code) or pc_intr < len(code):
     # fetch instr cycle
-    dut._log.info(f"PC = {int(dut.uo_out.value)}")
-    dut._log.info(f"Data = {int(dut.uio_out.value)}")
-    dut._log.info(f"DataEn = {dut.uio_oe.value}")
-    #assert dut.uo_out.value == i
-    dut.uio_in.value = 43 # invalid instr
-    await ClockCycles(dut.clk, 1)
+    # simulation --
+    assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+    pc_sim = int(dut.uo_out.value)
+    dut.uio_in.value = stack_sim[pc_sim]
+    # interpreter --
+    instr_intr = stack_intr[pc_intr]
+    print(f"\t {pc_sim}({pc_intr}): {instr_intr}")
+    assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
+    await FallingEdge(dut.clk) # go to instr cycle
+    if depth_intr != 0:
+        print("looping...")
+    if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
+        # fetch data cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+        reg_sim = int(dut.uo_out.value)
+        dut.uio_in.value = stack_sim[reg_sim]
+        # interpreter --
+        print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
+        assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
+        await FallingEdge(dut.clk) # go to temp++/-- cycle
+        # temp++/-- cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 0, "write should be disabled!" # 00, write disabled
+        # interpreter --
+        if instr_intr == ord('+'): # +
+            stack_intr[reg_intr] = (stack_intr[reg_intr] + 1) % 255
+        else: # -
+            stack_intr[reg_intr] = stack_intr[reg_intr] - 1 
+            if stack_intr[reg_intr] < 0:
+                stack_intr[reg_intr] = 255
+        await FallingEdge(dut.clk) # go to write back cycle
+        # write back cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 255, "write should be enabled!" #ff, write enabled
+        reg_sim = int(dut.uo_out.value)
+        stack_sim[reg_sim] = int(dut.uio_out.value)
+        # interpreter --
+        print(f"{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]})")
+        assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
+        #await FallingEdge(dut.clk) # go to pc++ cycle
+
+    elif (instr_intr == ord('>') or instr_intr == ord('<')):
+        # reg++/-- cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+        # interpreter --
+        if instr_intr == ord('>'): # >
+            reg_intr = (reg_intr + 1) % 255
+        else: # <
+            reg_intr = reg_intr - 1
+            if reg_intr < 0:
+               reg_intr = 255
+        #await FallingEdge(dut.clk) # go to pc++ cycle
+
+        print(f"{reg_intr}")
+    elif instr_intr == ord('[') or instr_intr == ord(']'):
+        print("[]")
+    
+
+    await FallingEdge(dut.clk) # go to pc++ cycle
+
+    # pc++ cycle
+    # simulation -- 
+    assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+    # interpreter --
+    # pc++ with overflow and underflow
+    if depth_intr <= 127:
+        pc_intr = (pc_intr + 1) % 255
+    else:
+        pc_intr = pc_intr - 1
+        if pc_intr < 0:
+            pc_intr = 255
+
+    await FallingEdge(dut.clk) # go to fetch cycle
+
+  
