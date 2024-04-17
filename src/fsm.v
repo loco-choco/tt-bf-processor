@@ -81,17 +81,18 @@ end
 
 
 // States
-localparam STATE_Next_PC = 3'd1,
-	   STATE_Fetch_Instr = 3'd0, // Fetch Instr is the real initial state, as the PC is zero here
+localparam STATE_Next_PC = 4'd0,
+	   STATE_Fetch_Instr = 4'd1, // Fetch Instr is the real initial state, as the PC is zero here
+	   STATE_Exec_Instr = 4'd2, // Fetch Instr is the real initial state, as the PC is zero here
 	   // +/-
-	   STATE_Sum_Sub_Fetch_Data = 3'd2, // Step 1 -> Fetching Data
-	   STATE_Sum_Sub_Operate_Data = 3'd3, // Step 2 -> Data++/--
-	   STATE_Sum_Sub_Write_Data = 3'd4, // Step 2 -> Save result in mem||y
+	   STATE_Sum_Sub_Fetch_Data = 4'd3, // Step 1 -> Fetching Data
+	   STATE_Sum_Sub_Operate_Data = 4'd4, // Step 2 -> Data++/--
+	   STATE_Sum_Sub_Write_Data = 4'd5, // Step 2 -> Save result in mem||y
 	   // >/<
-	   STATE_Shift_Reg = 3'd5, // Reg++/--
+	   STATE_Shift_Reg = 4'd6, // Reg++/--
 	   // [/]
-	   STATE_Loop_Fetch_Data = 3'd6, // If Looping = 0, Fetch Data
-	   STATE_Loop_Operate_Depth = 3'd7; // If Looping = 1 || data matches condition, Depth++/--
+	   STATE_Loop_Fetch_Data = 4'd7, // If Looping = 0, Fetch Data
+	   STATE_Loop_Operate_Depth = 4'd8; // If Looping = 1 || data matches condition, Depth++/--
 
 // State Regs
 reg[2:0] current_state;
@@ -127,6 +128,8 @@ always @ ( * ) begin
     STATE_Fetch_Instr : begin
       addr_sel = ADDR_SEL_PC; // addr = pc
       instr_en = 1; // instr = data
+    end
+    STATE_Exec_Instr : begin // just a decoder
     end
     // +/-
     STATE_Sum_Sub_Fetch_Data : begin
@@ -180,6 +183,9 @@ always @ ( * ) begin
       next_state = STATE_Fetch_Instr;
     end
     STATE_Fetch_Instr : begin
+      next_state = STATE_Exec_Instr;
+    end
+    STATE_Exec_Instr : begin
       if(not_instr) // Not instr, skip to next pc
         next_state = STATE_Next_PC;
       else begin
