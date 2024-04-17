@@ -95,8 +95,8 @@ localparam STATE_Next_PC = 4'd0,
 	   STATE_Loop_Operate_Depth = 4'd8; // If Looping = 1 || data matches condition, Depth++/--
 
 // State Regs
-reg[2:0] current_state;
-reg[2:0] next_state;
+reg[3:0] current_state;
+reg[3:0] next_state;
 
 // Looping condition
 
