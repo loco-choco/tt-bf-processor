@@ -6,7 +6,6 @@ SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = project.v alu.v dff.v fsm.v is_zero.v mux2.v mux4.v signal.v
-
 ifneq ($(GATES),yes)
 
 # RTL simulation:

@@ -27,7 +27,7 @@ module tt_um_loco_choco (
   wire write;
   assign data_in = uio_in;
   assign uio_out = data_out;
-  assign uio_oe = write ? 8'b11111111 : 8'b00000000;
+  assign uio_oe = {8{write}};
   
   // Registers ------
   // PC
