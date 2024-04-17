@@ -57,12 +57,12 @@ async def test_project(dut):
     dut.uio_in.value = stack_sim[pc_sim]
     # interpreter --
     instr_intr = stack_intr[pc_intr]
-    print(f"\t {pc_sim}({pc_intr}): {chr(instr_intr)}")
+    print(f"\t{pc_sim}({pc_intr}): {chr(instr_intr)}")
     assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
     # exec cycle
     await FallingEdge(dut.clk) # go to instr cycle
     if depth_intr != 0:
-        print("\t\t looping...")
+        print("\t\tlooping...")
     if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
         # fetch data cycle
         await FallingEdge(dut.clk) # go to temp++/-- cycle
@@ -79,7 +79,7 @@ async def test_project(dut):
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" # 00, write disabled
         # interpreter --
         if instr_intr == ord('+'): # +
-            stack_intr[reg_intr] = (stack_intr[reg_intr] + 1) % 255
+            stack_intr[reg_intr] = (stack_intr[reg_intr] + 1) % 256
         else: # -
             stack_intr[reg_intr] = stack_intr[reg_intr] - 1 
             if stack_intr[reg_intr] < 0:
@@ -102,7 +102,7 @@ async def test_project(dut):
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
         # interpreter --
         if instr_intr == ord('>'): # >
-            reg_intr = (reg_intr + 1) % 255
+            reg_intr = (reg_intr + 1) % 256
         else: # <
             reg_intr = reg_intr - 1
             if reg_intr < 0:
@@ -127,7 +127,7 @@ async def test_project(dut):
         assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
         # interpreter --
         if instr_intr == ord('[') and (depth_intr != 0 or temp == 0): # >
-            depth_intr = (depth_intr + 1) % 255
+            depth_intr = (depth_intr + 1) % 256
         elif instr_intr == ord(']') and (depth_intr != 0 or temp != 0):
             depth_intr = depth_intr - 1
             if depth_intr < 0:
@@ -146,8 +146,10 @@ async def test_project(dut):
     # interpreter --
     # pc++ with overflow and underflow
     if depth_intr <= 127:
-        pc_intr = (pc_intr + 1) % 255
+        print("\t\t\tPC++")
+        pc_intr = (pc_intr + 1) % 256
     else:
+        print("\t\t\tPC--")
         pc_intr = pc_intr - 1
         if pc_intr < 0:
             pc_intr = 255
