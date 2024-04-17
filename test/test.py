@@ -42,7 +42,7 @@ async def test_project(dut):
   stack_intr = [0 for i in range(256)]
 
   # load code for both the interpreter and simulation
-  code = ".++[-]"
+  code = "<++[-]"
   load_code(stack_sim, code)
   load_code(stack_intr, code)
 
@@ -57,6 +57,8 @@ async def test_project(dut):
     instr_intr = stack_intr[pc_intr]
     print(f"\t {pc_sim}({pc_intr}): {instr_intr}")
     assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
+    await FallingEdge(dut.clk) # go to exec cycle
+    # exec cycle
     await FallingEdge(dut.clk) # go to instr cycle
     if depth_intr != 0:
         print("looping...")
