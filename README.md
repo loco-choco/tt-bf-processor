@@ -1,6 +1,7 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg)
 
-# Brainf\*ck Processor for Tiny Tapeout
+# Brainf\*ck Processor for Tiny Tapeout (_BF3b4_)
+
 
 ## What is this project
 
