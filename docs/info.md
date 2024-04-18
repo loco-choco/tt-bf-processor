@@ -24,7 +24,7 @@ This project can be tested by having a way to decode the address (_uo_out_) for 
 
 ![test-diagram](test-diagram.png)
 
-(The elements are very generic on porpuse, they are just to give a general idea of how to interface with the processor)
+(The elements are very generic on purpose, they are just to give a general idea of how to interface with the processor)
 
 ## External hardware
 
