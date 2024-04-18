@@ -47,36 +47,58 @@ async def test_project(dut):
   load_code(stack_sim, code)
   load_code(stack_intr, code)
 
+  await FallingEdge(dut.clk) # go from reset state
+
   dut._log.info("Running Code")
   while pc_sim < len(code) or pc_intr < len(code):
-    # fetch instr cycle
+    # fetch instr cycle 1.1 - writing addr
     # simulation --
-    await FallingEdge(dut.clk) # go to exec cycle
-    assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
-    pc_sim = int(dut.uo_out.value)
+    await FallingEdge(dut.clk) # go to reading data cycle
+    assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
+    assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+    pc_sim = int(dut.uio_out.value)
+    # interpreter --
+    print(f"\tPC: {pc_sim}({pc_intr})")
+    assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
+    # fetch instr cycle 1.2 - reading addr
+    # simulation --
+    await FallingEdge(dut.clk) # go to reading data cycle
+    assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
+    assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
     dut.uio_in.value = stack_sim[pc_sim]
     # interpreter --
     instr_intr = stack_intr[pc_intr]
-    print(f"\t{pc_sim}({pc_intr}): {chr(instr_intr)}")
-    assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
+    print(f"\tInstr: {chr(instr_intr)}({chr(stack_sim[pc_sim])})")
+    assert stack_sim[pc_sim] == instr_intr, "simulation doesnt match interpreter!"
     # exec cycle
     await FallingEdge(dut.clk) # go to instr cycle
+
     if depth_intr != 0:
         print("\t\tlooping...")
     if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
-        # fetch data cycle
+        # fetch data cycle 1.1 - writing addr
+        await FallingEdge(dut.clk) # go to reading data cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
+        assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+        reg_sim = int(dut.uio_out.value)
+        # interpreter --
+        print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
+        assert reg_sim == reg_intr, "simulation doesnt match interpreter!"
+        # fetch data cycle 1.2 - reading data 
         await FallingEdge(dut.clk) # go to temp++/-- cycle
         # simulation --
-        assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
-        reg_sim = int(dut.uo_out.value)
+        assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
+        assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
         dut.uio_in.value = stack_sim[reg_sim]
         # interpreter --
-        print(f"\t\t{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
-        assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
+        print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
+        assert stack_sim[reg_sim] == stack_intr[reg_intr], "simulation doesnt match interpreter!"
         # temp++/-- cycle
         await FallingEdge(dut.clk) # go to write back cycle
         # simulation --
-        assert int(dut.uio_oe.value) == 0, "write should be disabled!" # 00, write disabled
+        assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" # 00, write disabled
+        assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
         # interpreter --
         if instr_intr == ord('+'): # +
             stack_intr[reg_intr] = (stack_intr[reg_intr] + 1) % 256
@@ -84,22 +106,31 @@ async def test_project(dut):
             stack_intr[reg_intr] = stack_intr[reg_intr] - 1 
             if stack_intr[reg_intr] < 0:
                 stack_intr[reg_intr] = 255
+        # write back cycle 3.1 - writing addr
+        await FallingEdge(dut.clk) # go to writing data cycle
+        # simulation --
+        assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
+        assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+        reg_sim = int(dut.uio_out.value)
+        # interpreter --
+        print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
+        assert reg_sim == reg_intr, "simulation doesnt match interpreter!"
         # write back cycle
         await FallingEdge(dut.clk) # go to pc++ cycle
         # simulation --
-        assert int(dut.uio_oe.value) == 255, "write should be enabled!" #ff, write enabled
-        reg_sim = int(dut.uo_out.value)
+        assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
+        assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
         stack_sim[reg_sim] = int(dut.uio_out.value)
         # interpreter --
-        print(f"\t\t{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]}) <- OUT")
-        assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
-        #await FallingEdge(dut.clk) # go to pc++ cycle
+        print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> OUT")
+        assert stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
 
     elif (instr_intr == ord('>') or instr_intr == ord('<')):
         # reg++/-- cycle
         await FallingEdge(dut.clk) # go to pc++ cycle
         # simulation --
-        assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+        assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
+        assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
         # interpreter --
         if instr_intr == ord('>'): # >
             reg_intr = (reg_intr + 1) % 256
@@ -111,20 +142,30 @@ async def test_project(dut):
         print(f"\t\tReg = {reg_intr}")
     elif instr_intr == ord('[') or instr_intr == ord(']'):
         temp = None
-        if depth_intr == 0: # fetch data cycle
+        if depth_intr == 0: # fetch data cycle 1.1 - writing addr
+            await FallingEdge(dut.clk) # go to reading data cycle
+            # simulation --
+            assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write disabled
+            assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+            reg_sim = int(dut.uio_out.value)
+            # interpreter --
+            print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
+            assert reg_sim == reg_intr, "simulation doesnt match interpreter!"
+            # fetch data cycle 1.2 - reading data
             await FallingEdge(dut.clk) # go to depth++/--
             # simulation --
-            assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
-            reg_sim = int(dut.uo_out.value)
+            assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
+            assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
             dut.uio_in.value = stack_sim[reg_sim]
             # interpreter --
             temp = stack_intr[reg_intr]
-            print(f"\t\t{reg_sim}({reg_intr}) = {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
-            assert reg_sim == reg_intr and stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
+            print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
+            assert stack_sim[reg_sim] == stack_intr[reg_intr], "simulation doesnt match interpreter!"
         # depth ++/-- cycle
         await FallingEdge(dut.clk) # go to pc++ cycle
         # simulation --
-        assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+        assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
+        assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
         # interpreter --
         if instr_intr == ord('[') and (depth_intr != 0 or temp == 0): # >
             depth_intr = (depth_intr + 1) % 256
@@ -142,7 +183,8 @@ async def test_project(dut):
     # pc++ cycle
     await FallingEdge(dut.clk) # go to fetch cycle
     # simulation -- 
-    assert int(dut.uio_oe.value) == 0, "write should be disabled!" #00, write disabled
+    assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
+    assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
     # interpreter --
     # pc++ with overflow and underflow
     if depth_intr <= 127:

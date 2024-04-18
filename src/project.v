@@ -7,7 +7,7 @@
 
 module tt_um_loco_choco (
     input  wire [7:0] ui_in,    // Dedicated inputs -> Nothing
-    output wire [7:0] uo_out,   // Dedicated outputs -> Addr
+    output wire [7:0] uo_out,   // Dedicated outputs -> (0-> Write, 1-> Addr)
     input  wire [7:0] uio_in,   // IOs: Input path -> Data (Read Mode)
     output wire [7:0] uio_out,  // IOs: Output path -> Data (Write Mode)
     output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output) -> Pseudo Write Pin
@@ -16,15 +16,19 @@ module tt_um_loco_choco (
     input  wire       rst_n     // reset_n - low to reset
 );
   // Output ---------
-  wire [7:0] addr;
-  wire addr_sel;
-  mux2 addr_sel_ (addr_sel, pc_reg_out, reg_reg_out, addr);
-  assign uo_out = addr;
+  wire addr;
+  wire write;
+  assign uo_out[0] = write;
+  assign uo_out[1] = addr;
+  assign uo_out[7:2] = 6'b0;
 
   // Tristate IO ----
   wire [7:0] data_in;
   wire [7:0] data_out;
-  wire write;
+  wire addr_sel;
+  wire [7:0] addr_sel_out;
+  mux2 addr_sel_ (addr_sel, pc_reg_out, reg_reg_out, addr_sel_out);
+  mux2 out_sel (addr, temp_reg_out, addr_sel_out, data_out);
   assign data_in = uio_in;
   assign uio_out = data_out;
   assign uio_oe = {8{write}};
@@ -51,7 +55,6 @@ module tt_um_loco_choco (
   // Temp
   wire temp_en;
   wire [7:0] temp_reg_out;
-  assign data_out = temp_reg_out;
 
   wire [7:0] data_sel_out;
   wire data_is_zero;
@@ -83,7 +86,7 @@ module tt_um_loco_choco (
 	  clk, ena, rst_n, instr_reg_out,
           looping, depth_signal, data_is_zero,
 	  pc_en, reg_en, depth_en, temp_en, instr_en,
-          write, operation, alu_sel, data_sel, addr_sel
+          write, addr, operation, alu_sel, data_sel, addr_sel
   );
 
 endmodule
