@@ -19,6 +19,6 @@ This is a second version of my implementation of a [Brainf\*ck Processor](https:
 
 ![Diagram](diagram.png)
 
-## Circuit Diagram
+## Circuit Diagram - For Tiny Tapeout
 
 ![Diagram-TT](diagram-tt.png)
