@@ -6,7 +6,7 @@ from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles, FallingEdge
 
 #def simulate_instr(instr: str, dut):
-#    print(f"instr = '{instr}'")
+#    dut._log.info(f"instr = '{instr}'")
 #    intr_ascii = ord(instr)
 #    if instr is '+':
 
@@ -59,7 +59,7 @@ async def test_project(dut):
     assert dut.uo_out.value[-3] == 1, "instr_addr should be enabled!"
     pc_sim = int(dut.uio_out.value)
     # interpreter --
-    print(f"\tPC: {pc_sim}({pc_intr})")
+    dut._log.info(f"\tPC: {pc_sim}({pc_intr})")
     assert pc_sim == pc_intr, "simulation doesnt match interpreter!"
     # fetch instr cycle 1.2 - reading addr
     # simulation --
@@ -70,13 +70,13 @@ async def test_project(dut):
     dut.uio_in.value = stack_sim[pc_sim]
     # interpreter --
     instr_intr = stack_intr[pc_intr]
-    print(f"\tInstr: {chr(instr_intr)}({chr(stack_sim[pc_sim])})")
+    dut._log.info(f"\tInstr: {chr(instr_intr)}({chr(stack_sim[pc_sim])})")
     assert stack_sim[pc_sim] == instr_intr, "simulation doesnt match interpreter!"
     # exec cycle
     await FallingEdge(dut.clk) # go to instr cycle
 
     if depth_intr != 0:
-        print("\t\tlooping...")
+        dut._log.info("\t\tlooping...")
     if (instr_intr == ord('+') or instr_intr == ord('-')) and depth_intr == 0:
         # fetch data cycle 1.1 - writing addr
         await FallingEdge(dut.clk) # go to reading data cycle
@@ -86,7 +86,7 @@ async def test_project(dut):
         assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         reg_sim = int(dut.uio_out.value)
         # interpreter --
-        print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
+        dut._log.info(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
         assert reg_sim == reg_intr, "simulation doesnt match interpreter!"
         # fetch data cycle 1.2 - reading data 
         await FallingEdge(dut.clk) # go to temp++/-- cycle
@@ -96,7 +96,7 @@ async def test_project(dut):
         assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         dut.uio_in.value = stack_sim[reg_sim]
         # interpreter --
-        print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
+        dut._log.info(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
         assert stack_sim[reg_sim] == stack_intr[reg_intr], "simulation doesnt match interpreter!"
         # temp++/-- cycle
         await FallingEdge(dut.clk) # go to write back cycle
@@ -119,7 +119,7 @@ async def test_project(dut):
         assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         reg_sim = int(dut.uio_out.value)
         # interpreter --
-        print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
+        dut._log.info(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
         assert reg_sim == reg_intr, "simulation doesnt match interpreter!"
         # write back cycle
         await FallingEdge(dut.clk) # go to pc++ cycle
@@ -129,7 +129,7 @@ async def test_project(dut):
         assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         stack_sim[reg_sim] = int(dut.uio_out.value)
         # interpreter --
-        print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> OUT")
+        dut._log.info(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> OUT")
         assert stack_sim[reg_sim] == stack_intr[reg_intr] , "simulation doesnt match interpreter!"
 
     elif (instr_intr == ord('>') or instr_intr == ord('<')):
@@ -147,7 +147,7 @@ async def test_project(dut):
             if reg_intr < 0:
                reg_intr = 255
 
-        print(f"\t\tReg = {reg_intr}")
+        dut._log.info(f"\t\tReg = {reg_intr}")
     elif instr_intr == ord('[') or instr_intr == ord(']'):
         temp = None
         if depth_intr == 0: # fetch data cycle 1.1 - writing addr
@@ -158,7 +158,7 @@ async def test_project(dut):
             assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
             reg_sim = int(dut.uio_out.value)
             # interpreter --
-            print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
+            dut._log.info(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
             assert reg_sim == reg_intr, "simulation doesnt match interpreter!"
             # fetch data cycle 1.2 - reading data
             await FallingEdge(dut.clk) # go to depth++/--
@@ -169,7 +169,7 @@ async def test_project(dut):
             dut.uio_in.value = stack_sim[reg_sim]
             # interpreter --
             temp = stack_intr[reg_intr]
-            print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
+            dut._log.info(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
             assert stack_sim[reg_sim] == stack_intr[reg_intr], "simulation doesnt match interpreter!"
         # depth ++/-- cycle
         await FallingEdge(dut.clk) # go to pc++ cycle
@@ -185,7 +185,7 @@ async def test_project(dut):
             if depth_intr < 0:
                depth_intr = 255
 
-        print(f"\t\tDepth = {depth_intr}")
+        dut._log.info(f"\t\tDepth = {depth_intr}")
     #else:
         #await FallingEdge(dut.clk) # go to pc++ cycle
     
@@ -200,10 +200,10 @@ async def test_project(dut):
     # interpreter --
     # pc++ with overflow and underflow
     if depth_intr <= 127:
-        print("\t\t\tPC++")
+        dut._log.info("\t\t\tPC++")
         pc_intr = (pc_intr + 1) % 256
     else:
-        print("\t\t\tPC--")
+        dut._log.info("\t\t\tPC--")
         pc_intr = pc_intr - 1
         if pc_intr < 0:
             pc_intr = 255
