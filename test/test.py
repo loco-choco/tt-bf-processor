@@ -18,7 +18,7 @@ def load_code(stack, code: str):
 async def test_project(dut):
   dut._log.info("Start")
   
-  clock = Clock(dut.clk, 10, units="us")
+  clock = Clock(dut.clk, 0.05, units="us")
   cocotb.start_soon(clock.start())
 
   # Reset
