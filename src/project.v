@@ -18,9 +18,11 @@ module tt_um_loco_choco (
   // Output ---------
   wire addr;
   wire write;
+  wire [13:8] pc_extension;
+  assign pc_extension = 6'b0;
   assign uo_out[0] = write;
   assign uo_out[1] = addr;
-  assign uo_out[7:2] = 6'b0;
+  assign uo_out[7:2] = pc_extension;
 
   // Tristate IO ----
   wire [7:0] data_in;
