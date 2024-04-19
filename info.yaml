@@ -17,9 +17,11 @@ project:
   source_files:        
     - "project.v"
     - "dff.v"
+    - "dff14.v"
     - "mux2.v"
     - "mux4.v"
     - "is_zero.v"
+    - "is_zero14.v"
     - "signal.v"
     - "alu.v"
     - "fsm.v"

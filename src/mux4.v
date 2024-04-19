@@ -5,11 +5,11 @@
 
 module mux4  (
     input wire[1:0] sel,
-    input wire [7:0] in_0,
-    input wire [7:0] in_1,
-    input wire [7:0] in_2,
-    input wire [7:0] in_3,
-    output reg [7:0] out
+    input wire [12:0] in_0,
+    input wire [12:0] in_1,
+    input wire [12:0] in_2,
+    input wire [12:0] in_3,
+    output reg [12:0] out
 );
 
 always @ ( * ) begin

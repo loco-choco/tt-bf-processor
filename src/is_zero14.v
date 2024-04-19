@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-module signal (
+module is_zero14  (
     input wire [12:0] in,
-    output wire signal
+    output wire is_zero
 );
 
-assign signal = in[12];
+assign is_zero = in == 0;
 
 endmodule

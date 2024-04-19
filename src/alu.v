@@ -5,9 +5,9 @@
 
 module alu  (
     input wire operation,
-    input wire [7:0] a,
-    input wire [7:0] b,
-    output reg [7:0] result
+    input wire [12:0] a,
+    input wire [12:0] b,
+    output reg [12:0] result
 );
 
 always @ ( * ) begin
