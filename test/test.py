@@ -56,6 +56,7 @@ async def test_project(dut):
     await FallingEdge(dut.clk) # go to reading data cycle
     assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
     assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+    assert dut.uo_out.value[-3] == 1, "instr_addr should be enabled!"
     pc_sim = int(dut.uio_out.value)
     # interpreter --
     print(f"\tPC: {pc_sim}({pc_intr})")
@@ -65,6 +66,7 @@ async def test_project(dut):
     await FallingEdge(dut.clk) # go to reading data cycle
     assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
     assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+    assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
     dut.uio_in.value = stack_sim[pc_sim]
     # interpreter --
     instr_intr = stack_intr[pc_intr]
@@ -81,6 +83,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
         assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         reg_sim = int(dut.uio_out.value)
         # interpreter --
         print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
@@ -90,6 +93,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
         assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         dut.uio_in.value = stack_sim[reg_sim]
         # interpreter --
         print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> IN")
@@ -99,6 +103,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" # 00, write disabled
         assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         # interpreter --
         if instr_intr == ord('+'): # +
             stack_intr[reg_intr] = (stack_intr[reg_intr] + 1) % 256
@@ -111,6 +116,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
         assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         reg_sim = int(dut.uio_out.value)
         # interpreter --
         print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
@@ -120,6 +126,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write enabled
         assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         stack_sim[reg_sim] = int(dut.uio_out.value)
         # interpreter --
         print(f"\t\tData: {stack_sim[reg_sim]}({stack_intr[reg_intr]}) -> OUT")
@@ -131,6 +138,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
         assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         # interpreter --
         if instr_intr == ord('>'): # >
             reg_intr = (reg_intr + 1) % 256
@@ -147,6 +155,7 @@ async def test_project(dut):
             # simulation --
             assert int(dut.uio_oe.value) == 255 and dut.uo_out.value[-1] == 1, "write should be enabled!" #ff, write disabled
             assert dut.uo_out.value[-2] == 1, "addr should be enabled!"
+            assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
             reg_sim = int(dut.uio_out.value)
             # interpreter --
             print(f"\t\tAddr: {reg_sim}({reg_intr}) -> OUT")
@@ -156,6 +165,7 @@ async def test_project(dut):
             # simulation --
             assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
             assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+            assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
             dut.uio_in.value = stack_sim[reg_sim]
             # interpreter --
             temp = stack_intr[reg_intr]
@@ -166,6 +176,7 @@ async def test_project(dut):
         # simulation --
         assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
         assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+        assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
         # interpreter --
         if instr_intr == ord('[') and (depth_intr != 0 or temp == 0): # >
             depth_intr = (depth_intr + 1) % 256
@@ -185,6 +196,7 @@ async def test_project(dut):
     # simulation -- 
     assert int(dut.uio_oe.value) == 0 and dut.uo_out.value[-1] == 0, "write should be disabled!" #00, write disabled
     assert dut.uo_out.value[-2] == 0, "addr should be disabled!"
+    assert dut.uo_out.value[-3] == 0, "instr_addr should be disabled!"
     # interpreter --
     # pc++ with overflow and underflow
     if depth_intr <= 127:

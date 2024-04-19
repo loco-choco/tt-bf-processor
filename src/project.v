@@ -16,19 +16,22 @@ module tt_um_loco_choco (
     input  wire       rst_n     // reset_n - low to reset
 );
   // Output ---------
+  wire instr_addr;
   wire addr;
   wire write;
-  wire [13:8] pc_extension;
+  wire [12:8] pc_extension;
   assign pc_extension = 6'b0;
   assign uo_out[0] = write;
   assign uo_out[1] = addr;
-  assign uo_out[7:2] = pc_extension;
+  assign uo_out[2] = instr_addr;
+  assign uo_out[7:3] = pc_extension;
 
   // Tristate IO ----
   wire [7:0] data_in;
   wire [7:0] data_out;
   wire addr_sel;
   wire [7:0] addr_sel_out;
+  assign instr_addr = addr & ~addr_sel; // we have addr selected and it is outputing the pc 
   mux2 addr_sel_ (addr_sel, pc_reg_out, reg_reg_out, addr_sel_out);
   mux2 out_sel (addr, temp_reg_out, addr_sel_out, data_out);
   assign data_in = uio_in;
